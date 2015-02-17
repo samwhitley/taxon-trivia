@@ -1,0 +1,91 @@
+$color-main: #28333c;
+$break-xl: 68.75em;
+
+/*** Utilities ***/
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*** Global ***/
+
+body {
+  background: url(/images/paper-bg.jpg) repeat;
+  color: $color-main;
+  font-family: sans-serif;
+}
+
+header {
+  border-bottom: 3px solid $color-main;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold
+}
+
+h2 {
+  font-size: 2em;
+}
+
+/*** Common ***/
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+
+  @media (min-width: $break-xl) {
+    width: $break-xl;
+  }
+}
+
+/*** Header ***/
+
+.headerLeft {
+  float: left;
+}
+
+.headerRight {
+  float: right;
+}
+
+/*** Uncategorized ***/
+
+.botanical {
+  div {
+    position: fixed;
+    top: 50%;
+    margin-top: -300px;
+    width: 30%;
+    max-width: 350px;
+    height: 600px;
+    // background: blue;
+  }
+}
+
+.bLeft {
+  left: 0;
+  background: url('/images/flower-left.png');
+  background-position: right;
+}
+
+.bRight {
+  right: 0;
+  background: url('/images/flower-right.png');
+  background-position: left;
+}
