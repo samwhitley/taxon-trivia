@@ -110,9 +110,17 @@ header {
 /*** Picture Grid ***/
 .choice {
   background: purple;
-  padding: 20px; }
+  margin-bottom: 40px; }
   .choice img {
     width: 100%; }
+  .choice button {
+    width: 100%;
+    border: 1px solid #28333c;
+    background: orange;
+    padding: 20px;
+    margin-top: 10px; }
+  .choice button:hover {
+    cursor: pointer; }
 
 .choiceArea {
   margin-top: 100px;
@@ -120,7 +128,8 @@ header {
   margin-right: auto;
   background: fuchsia;
   width: 60%;
-  position: relative; }
+  position: relative;
+  margin-bottom: 140px; }
 
 /*** Background Image ***/
 .botanical div {

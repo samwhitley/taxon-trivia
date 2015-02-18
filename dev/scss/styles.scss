@@ -1,6 +1,17 @@
 $color-main: #28333c;
+
+$global-pad: 20px;
+
 // $break-xl: 1200px;
 $break-xl: 9999px;
+
+$header-height: 100px;
+
+$choice-margin: 40px;
+$choice-button-margin: 10px;
+$choice-button-pad: 20px;
+
+$footer-height: 100px;
 
 /*** Utilities ***/
 
@@ -50,11 +61,11 @@ header {
 /*** Header ***/
 
 header {
-  height: 100px;
+  height: $header-height;
   background: lightgray;
   position: fixed;
   top: 0;
-  line-height: 100px;
+  line-height: $header-height;
   z-index: 100;
 
   section {
@@ -71,7 +82,7 @@ header {
 
 .headerLeft {
   left: 0;
-  padding-left: 20px;
+  padding-left: $global-pad;
 
   @media (min-width: $break-xl) {
     padding-left: 0;
@@ -80,7 +91,7 @@ header {
 
 .headerRight {
   right: 0;
-  padding-right: 20px;
+  padding-right: $global-pad;
 
   @media (min-width: $break-xl) {
     padding-right: 0;
@@ -134,7 +145,7 @@ header {
   transition: 0.5s all;
 
   .wrapper {
-    padding: 20px;
+    padding: $global-pad;
   }
 }
 
@@ -144,11 +155,26 @@ header {
 
 /*** Picture Grid ***/
 
+
+
 .choice {
   background: purple;
-  padding: 20px;
+  margin-bottom: $choice-margin;
+
   img {
     width: 100%;
+  }
+
+  button {
+    width: 100%;
+    border: 1px solid $color-main;
+    background: orange;
+    padding: $choice-button-pad;
+    margin-top: $choice-button-margin;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 }
 
@@ -159,6 +185,7 @@ header {
   background: fuchsia;
   width: 60%;
   position: relative;
+  margin-bottom: $footer-height + $choice-margin;
 }
 
 /*** Background Image ***/
@@ -195,13 +222,13 @@ header {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 100px;
-  line-height: 100px;
+  height: $footer-height;
+  line-height: $footer-height;
   font-style: italic;
   font-size: 1em;
 
   .wrapper {
-    padding: 0 20px;
+    padding: 0 $global-pad;
   }
 
   @media (min-width: $break-xl) {
