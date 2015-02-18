@@ -2,16 +2,25 @@ $color-main: #28333c;
 
 $global-pad: 20px;
 
-// $break-xl: 1200px;
-$break-xl: 9999px;
+$break-xl: 1200px;
+// $break-xl: 9999px;
 
 $header-height: 100px;
+
+$imgWrapHeight : 350px;
 
 $choice-margin: 40px;
 $choice-button-margin: 10px;
 $choice-button-pad: 20px;
 
 $footer-height: 100px;
+
+$desktop-font-large: 36px;
+$desktop-font-main: 20px;
+
+$mobile-font-large: 24px;
+$mobile-font-main: 16px;
+
 
 /*** Utilities ***/
 
@@ -99,16 +108,16 @@ header {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: $mobile-font-large;
   font-weight: 700;
 
   @media (min-width: $break-xl) {
-    font-size: 2.5em;
+    font-size: $desktop-font-large;
   }
 }
 
 .subtitle {
-  font-size: 1.2em;
+  font-size: $desktop-font-main;
   font-style: italic;
   font-weight: 400;
   display: none;
@@ -119,11 +128,11 @@ header {
 }
 
 .info {
-  font-size: 1em;
+  font-size: $mobile-font-main;
   font-weight: 700;
 
   @media (min-width: $break-xl) {
-    font-size: 1.2em;
+    font-size: $desktop-font-main;
   }
 }
 
@@ -155,10 +164,7 @@ header {
 
 /*** Picture Grid ***/
 
-
-
 .choice {
-  background: purple;
   margin-bottom: $choice-margin;
 
   img {
@@ -171,10 +177,45 @@ header {
     background: orange;
     padding: $choice-button-pad;
     margin-top: $choice-button-margin;
+    font-size: $mobile-font-main;
+
+    @media (min-width: $break-xl) {
+      font-size: $desktop-font-main;
+    }
   }
 
   button:hover {
     cursor: pointer;
+  }
+
+  @media (min-width: $break-xl) {
+    float: left;
+    width: (1/3 * 100%);
+    padding-right: $global-pad;
+
+    &:nth-child(2n) {
+      padding-left: 0;
+      padding-right: ($global-pad / 2);
+    }
+
+    &:nth-child(3n) {
+      padding-left: ($global-pad / 2);
+      padding-right: 0;
+    }
+  }
+}
+
+.imgWrap {
+  @media (min-width: $break-xl) {
+    overflow: hidden;
+    height: $imgWrapHeight;
+
+    // TODO find a more elegant solution for the images
+    img {
+      height: 100%;
+      min-width: 100%;
+      width: auto;
+    }
   }
 }
 
@@ -182,10 +223,20 @@ header {
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
-  background: fuchsia;
+  // background: fuchsia;
   width: 60%;
   position: relative;
   margin-bottom: $footer-height + $choice-margin;
+
+  @media (min-width: $break-xl) {
+    width: $break-xl;
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -($break-xl / 2);
+    margin-top: -($imgWrapHeight + $choice-button-margin + $desktop-font-main + ($choice-button-pad * 2)) / 2;
+  }
 }
 
 /*** Background Image ***/
@@ -196,7 +247,6 @@ header {
     top: 50%;
     margin-top: -300px;
     width: 20%;
-    // max-width: 350px;
     background-repeat: no-repeat;
     height: 600px;
   }
@@ -225,14 +275,14 @@ header {
   height: $footer-height;
   line-height: $footer-height;
   font-style: italic;
-  font-size: 1em;
+  font-size: $mobile-font-main;
 
   .wrapper {
     padding: 0 $global-pad;
   }
 
   @media (min-width: $break-xl) {
-    font-size: 1.2em;
+    font-size: $desktop-font-main;
     .wrapper {
       padding: 0;
     }

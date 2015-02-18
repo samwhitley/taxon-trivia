@@ -31,9 +31,9 @@ header {
   width: 100%;
   position: relative;
   background: yellow; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .wrapper {
-      width: 9999px; } }
+      width: 1200px; } }
 
 /*** Header ***/
 header {
@@ -54,39 +54,39 @@ header {
 .headerLeft {
   left: 0;
   padding-left: 20px; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .headerLeft {
       padding-left: 0; } }
 
 .headerRight {
   right: 0;
   padding-right: 20px; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .headerRight {
       padding-right: 0; } }
 
 .title {
-  font-size: 1.5em;
+  font-size: 24px;
   font-weight: 700; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .title {
-      font-size: 2.5em; } }
+      font-size: 36px; } }
 
 .subtitle {
-  font-size: 1.2em;
+  font-size: 20px;
   font-style: italic;
   font-weight: 400;
   display: none; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .subtitle {
       display: inline; } }
 
 .info {
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 700; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .info {
-      font-size: 1.2em; } }
+      font-size: 20px; } }
 
 .info:hover {
   cursor: pointer; }
@@ -109,7 +109,6 @@ header {
 
 /*** Picture Grid ***/
 .choice {
-  background: purple;
   margin-bottom: 40px; }
   .choice img {
     width: 100%; }
@@ -118,18 +117,50 @@ header {
     border: 1px solid #28333c;
     background: orange;
     padding: 20px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    font-size: 16px; }
+    @media (min-width: 1200px) {
+      .choice button {
+        font-size: 20px; } }
   .choice button:hover {
     cursor: pointer; }
+  @media (min-width: 1200px) {
+    .choice {
+      float: left;
+      width: 33.33333%;
+      padding-right: 20px; }
+      .choice:nth-child(2n) {
+        padding-left: 0;
+        padding-right: 10px; }
+      .choice:nth-child(3n) {
+        padding-left: 10px;
+        padding-right: 0; } }
+
+@media (min-width: 1200px) {
+  .imgWrap {
+    overflow: hidden;
+    height: 350px; }
+    .imgWrap img {
+      height: 100%;
+      min-width: 100%;
+      width: auto; } }
 
 .choiceArea {
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
-  background: fuchsia;
   width: 60%;
   position: relative;
   margin-bottom: 140px; }
+  @media (min-width: 1200px) {
+    .choiceArea {
+      width: 1200px;
+      margin: 0;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-left: -600px;
+      margin-top: -210px; } }
 
 /*** Background Image ***/
 .botanical div {
@@ -160,12 +191,12 @@ header {
   height: 100px;
   line-height: 100px;
   font-style: italic;
-  font-size: 1em; }
+  font-size: 16px; }
   .gameStatus .wrapper {
     padding: 0 20px; }
-  @media (min-width: 9999px) {
+  @media (min-width: 1200px) {
     .gameStatus {
-      font-size: 1.2em; }
+      font-size: 20px; }
       .gameStatus .wrapper {
         padding: 0; } }
 
