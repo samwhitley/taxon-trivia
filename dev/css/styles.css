@@ -21,15 +21,12 @@ body {
   color: #28333c;
   font-family: 'Droid Serif', serif; }
 
-header {
-  border-bottom: 3px solid #28333c;
-  width: 100%; }
-
 /*** Common ***/
 .wrapper {
   margin: 0 auto;
   width: 100%;
-  position: relative; }
+  position: relative;
+  background: yellow; }
   @media (min-width: 1200px) {
     .wrapper {
       width: 1200px; } }
@@ -41,10 +38,13 @@ header {
   position: fixed;
   top: 0;
   line-height: 100px;
-  z-index: 100; }
+  z-index: 150;
+  border-bottom: 3px solid #28333c;
+  width: 100%; }
   header section {
     position: absolute;
-    top: 0; }
+    top: 0;
+    background: lightcoral; }
   header h1 {
     float: left;
     margin-right: 10px; }
@@ -95,14 +95,39 @@ header {
   position: fixed;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   right: -100%;
-  top: 100px;
+  z-index: 50;
   transition: 0.5s all; }
-  .details .wrapper {
-    padding: 20px; }
 
-.details.showing {
+.detailContent {
+  height: 100%;
+  overflow-y: auto;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: pink; }
+  @media (min-width: 1200px) {
+    .detailContent {
+      width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
+  .detailContent p {
+    margin: 10px 0; }
+  .detailContent .first {
+    margin-top: 0; }
+    @media (min-width: 1200px) {
+      .detailContent .first {
+        margin-top: 100px; } }
+  .detailContent .last {
+    margin-bottom: 220px; }
+    @media (min-width: 1200px) {
+      .detailContent .last {
+        margin-bottom: 120px; } }
+
+body.showDetails {
+  overflow: hidden; }
+
+.details.showDetails {
   right: 0; }
 
 /*** Picture Grid ***/
@@ -120,11 +145,19 @@ header {
         font-size: 20px; } }
   .choice button:hover {
     cursor: pointer; }
+  .choice img {
+    width: 100%; }
+  .choice:first-child {
+    padding-top: 40px; }
   @media (min-width: 1200px) {
     .choice {
       float: left;
       width: 33.33333%;
       padding-right: 20px; }
+      .choice img {
+        display: none; }
+      .choice:first-child {
+        padding-top: 0; }
       .choice:nth-child(2n) {
         padding-left: 0;
         padding-right: 10px; }
@@ -132,11 +165,14 @@ header {
         padding-left: 10px;
         padding-right: 0; } }
 
-@media (min-width: 1200px) {
-  .imgWrap {
-    height: 350px;
-    background: center;
-    background-size: cover; } }
+.imgWrap {
+  display: none;
+  background: center;
+  background-size: cover;
+  height: 350px; }
+  @media (min-width: 1200px) {
+    .imgWrap {
+      display: block; } }
 
 #choice1 .imgWrap {
   background-image: url("/images/placeholder-1.jpg"); }
@@ -193,7 +229,8 @@ header {
   height: 100px;
   line-height: 100px;
   font-style: italic;
-  font-size: 16px; }
+  font-size: 16px;
+  z-index: 100; }
   .gameStatus .wrapper {
     padding: 0 20px; }
   @media (min-width: 1200px) {

@@ -1,16 +1,19 @@
 var APP = (function() {
-  var $info = $(".info"),
+  var $body = $("body"),
+      $info = $(".info"),
       $details = $(".details"),
       detailsVisible = false;
 
   function connectEvents() {
     $(".info").click(function() {
       if (!detailsVisible) {
-        $details.addClass("showing");
+        // $body.addClass("showDetails");
+        $details.addClass("showDetails");
         detailsVisible = true;
       }
       else {
-        $details.removeClass("showing");
+        // $body.removeClass("showDetails");
+        $details.removeClass("showDetails");
         detailsVisible = false;
       }
     });

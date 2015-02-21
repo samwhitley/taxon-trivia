@@ -48,17 +48,13 @@ body {
   font-family: 'Droid Serif', serif;
 }
 
-header {
-  border-bottom: 3px solid $color-main;
-  width: 100%;
-}
-
 /*** Common ***/
 
 .wrapper {
   margin: 0 auto;
   width: 100%;
   position: relative;
+  background: yellow;
 
   @media (min-width: $break-xl) {
     width: $break-xl;
@@ -73,11 +69,14 @@ header {
   position: fixed;
   top: 0;
   line-height: $header-height;
-  z-index: 100;
+  z-index: 150;
+  border-bottom: 3px solid $color-main;
+  width: 100%;
 
   section {
     position: absolute;
     top: 0;
+    background: lightcoral;
   }
 
   h1 {
@@ -144,18 +143,53 @@ header {
   position: fixed;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   right: -100%;
-  top: 100px;
+  z-index: 50;
 
   transition: 0.5s all;
+}
 
-  .wrapper {
-    padding: $global-pad;
+.detailContent {
+  // position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: pink;
+
+  @media (min-width: $break-xl) {
+    width: $break-xl;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .first {
+    margin-top: 0;
+
+    @media (min-width: $break-xl) {
+      margin-top: $header-height;
+    }
+  }
+
+  .last {
+    margin-bottom: (2 * $footer-height) + $global-pad;
+
+    @media (min-width: $break-xl) {
+      margin-bottom: $header-height + $global-pad;
+    }
   }
 }
 
-.details.showing {
+body.showDetails {
+  overflow: hidden;
+}
+
+.details.showDetails {
   right: 0;
 }
 
@@ -181,10 +215,26 @@ header {
     cursor: pointer;
   }
 
+  img {
+    width: 100%;
+  }
+
+  &:first-child {
+    padding-top: $choice-margin;
+  }
+
   @media (min-width: $break-xl) {
     float: left;
     width: (1/3 * 100%);
     padding-right: $global-pad;
+
+    img {
+      display: none;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
 
     &:nth-child(2n) {
       padding-left: 0;
@@ -199,10 +249,13 @@ header {
 }
 
 .imgWrap {
+  display: none;
+  background: center;
+  background-size: cover;
+  height: $imgWrapHeight;
+
   @media (min-width: $break-xl) {
-    height: $imgWrapHeight;
-    background: center;
-    background-size: cover;
+    display: block;
   }
 }
 
@@ -274,6 +327,7 @@ header {
   line-height: $footer-height;
   font-style: italic;
   font-size: $mobile-font-main;
+  z-index: 100;
 
   .wrapper {
     padding: 0 $global-pad;
