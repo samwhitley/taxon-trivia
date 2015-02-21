@@ -160,7 +160,10 @@ body.showDetails {
   .choice button:hover {
     cursor: pointer; }
   .choice img {
-    width: 100%; }
+    width: 100%;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
   .choice:first-child {
     padding-top: 40px; }
   @media (min-width: 1200px) {
