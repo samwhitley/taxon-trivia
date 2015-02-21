@@ -1,9 +1,7 @@
 /*** Utilities ***/
 .cf:before, .cf:after {
   content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
+  display: table; }
 
 .cf:after {
   clear: both; }
@@ -28,18 +26,18 @@ button {
   margin: 0 auto;
   width: 100%;
   position: relative; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .wrapper {
-      width: 1200px; } }
+      width: 1024px; } }
 
 /*** Header ***/
 header {
-  height: 100px;
+  height: 60px;
+  line-height: 60px;
   background: #28333c;
   color: #fff;
   position: fixed;
   top: 0;
-  line-height: 100px;
   z-index: 150;
   border-bottom: 3px solid #28333c;
   width: 100%;
@@ -52,18 +50,22 @@ header {
   header h1 {
     float: left;
     margin-right: 10px; }
+  @media (min-width: 1024px) {
+    header {
+      height: 100px;
+      line-height: 100px; } }
 
 .headerLeft {
   left: 0;
   padding-left: 20px; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .headerLeft {
       padding-left: 0; } }
 
 .headerRight {
   right: 0;
   padding-right: 20px; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .headerRight {
       padding-right: 0; } }
 
@@ -71,7 +73,7 @@ header {
   font-size: 24px;
   font-weight: 700;
   color: #d1e163; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .title {
       font-size: 36px; } }
 
@@ -80,14 +82,14 @@ header {
   font-style: italic;
   font-weight: 400;
   display: none; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .subtitle {
       display: inline; } }
 
 .info {
   font-size: 16px;
   font-weight: 700; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .info {
       font-size: 20px; } }
 
@@ -117,9 +119,9 @@ header {
   -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
   box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .detailContent {
-      width: 1200px;
+      width: 1024px;
       margin-left: auto;
       margin-right: auto; } }
   .detailContent h3 {
@@ -136,12 +138,12 @@ header {
     line-height: 25px; }
   .detailContent .first {
     margin-top: 0; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
       .detailContent .first {
         margin-top: 100px; } }
   .detailContent .last {
-    margin-bottom: 220px; }
-    @media (min-width: 1200px) {
+    margin-bottom: 140px; }
+    @media (min-width: 1024px) {
       .detailContent .last {
         margin-bottom: 120px; } }
 
@@ -166,7 +168,7 @@ body.showDetails {
     -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
     border: none; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
       .choice button {
         font-size: 20px; } }
   .choice button:hover {
@@ -180,7 +182,7 @@ body.showDetails {
     box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
   .choice:first-child {
     padding-top: 40px; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .choice {
       float: left;
       width: 33.33333%;
@@ -200,11 +202,11 @@ body.showDetails {
   display: none;
   background: center;
   background-size: cover;
-  height: 350px;
+  height: 300px;
   -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
   box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .imgWrap {
       display: block; } }
 
@@ -218,21 +220,21 @@ body.showDetails {
   background-image: url("/images/placeholder-3.jpg"); }
 
 .choiceArea {
-  margin-top: 100px;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 100px;
   width: 60%;
-  position: relative;
-  margin-bottom: 140px; }
-  @media (min-width: 1200px) {
+  position: relative; }
+  @media (min-width: 1024px) {
     .choiceArea {
-      width: 1200px;
-      margin: 0;
+      width: 1024px;
       position: fixed;
       top: 50%;
       left: 50%;
-      margin-left: -600px;
-      margin-top: -210px; } }
+      margin: 0;
+      margin-left: -512px;
+      margin-top: -185px; } }
 
 /*** Background Image ***/
 .botanical div {
@@ -260,16 +262,18 @@ body.showDetails {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 100px;
-  line-height: 100px;
+  height: 60px;
+  line-height: 60px;
   font-style: italic;
   font-size: 16px;
   z-index: 100; }
   .gameStatus .wrapper {
     padding: 0 20px; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     .gameStatus {
-      font-size: 20px; }
+      font-size: 20px;
+      height: 100px;
+      line-height: 100px; }
       .gameStatus .wrapper {
         padding: 0; } }
 

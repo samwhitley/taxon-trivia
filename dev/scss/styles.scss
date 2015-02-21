@@ -1,12 +1,14 @@
 $color-main: #28333c;
 $global-pad: 20px;
-$break-xl: 1200px;
-$header-height: 100px;
-$imgWrapHeight: 350px;
+$break-xl: 1024px;
+$header-desktop-height: 100px;
+$header-mobile-height: 60px;
+$imgWrapHeight: 300px;
 $choice-margin: 40px;
 $choice-button-margin: 10px;
 $choice-button-pad: 20px;
-$footer-height: 100px;
+$footer-desktop-height: 100px;
+$footer-mobile-height: 60px;
 $desktop-font-large: 36px;
 $desktop-font-main: 20px;
 $mobile-font-large: 24px;
@@ -18,10 +20,7 @@ $clr-highlight: #d1e163;
 
 .cf:before, .cf:after {
     content: " ";
-    /* 1 */
-
     display: table;
-    /* 2 */
 }
 .cf:after {
     clear: both;
@@ -55,12 +54,12 @@ button {
 /*** Header ***/
 
 header {
-    height: $header-height;
+    height: $header-mobile-height;
+    line-height: $header-mobile-height;
     background: $clr-darkest;
     color: #fff;
     position: fixed;
     top: 0;
-    line-height: $header-height;
     z-index: 150;
     border-bottom: 3px solid $color-main;
     width: 100%;
@@ -74,6 +73,10 @@ header {
     h1 {
         float: left;
         margin-right: 10px;
+    }
+    @media (min-width: $break-xl) {
+        height: $header-desktop-height;
+        line-height: $header-desktop-height;
     }
 }
 .headerLeft {
@@ -132,7 +135,6 @@ header {
     transition: 0.5s all;
 }
 .detailContent {
-    // position: fixed;
     height: 100%;
     overflow-y: auto;
     left: 0;
@@ -165,13 +167,13 @@ header {
     .first {
         margin-top: 0;
         @media (min-width: $break-xl) {
-            margin-top: $header-height;
+            margin-top: $header-desktop-height;
         }
     }
     .last {
-        margin-bottom: (2 * $footer-height) + $global-pad;
+        margin-bottom: (2 * $footer-mobile-height) + $global-pad;
         @media (min-width: $break-xl) {
-            margin-bottom: $header-height + $global-pad;
+            margin-bottom: $footer-desktop-height + $global-pad;
         }
     }
 }
@@ -257,18 +259,18 @@ body.showDetails {
     background-image: url('/images/placeholder-3.jpg');
 }
 .choiceArea {
-    margin-top: 100px;
+    margin-top: $header-mobile-height;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: $footer-mobile-height + $choice-margin;
     width: 60%;
     position: relative;
-    margin-bottom: $footer-height + $choice-margin;
     @media (min-width: $break-xl) {
         width: $break-xl;
-        margin: 0;
         position: fixed;
         top: 50%;
         left: 50%;
+        margin: 0;
         margin-left: -($break-xl / 2);
         margin-top: -($imgWrapHeight + $choice-button-margin + $desktop-font-main + ($choice-button-pad * 2)) / 2;
     }
@@ -303,8 +305,8 @@ body.showDetails {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: $footer-height;
-    line-height: $footer-height;
+    height: $footer-mobile-height;
+    line-height: $footer-mobile-height;
     font-style: italic;
     font-size: $mobile-font-main;
     z-index: 100;
@@ -313,6 +315,8 @@ body.showDetails {
     }
     @media (min-width: $break-xl) {
         font-size: $desktop-font-main;
+        height: $footer-desktop-height;
+        line-height: $footer-desktop-height;
         .wrapper {
             padding: 0;
         }
