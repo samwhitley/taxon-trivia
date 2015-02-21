@@ -20,6 +20,9 @@ $desktop-font-main: 20px;
 $mobile-font-large: 24px;
 $mobile-font-main: 16px;
 
+$clr-darkest: #28333c;
+$clr-dark: #394651;
+$clr-highlight: #d1e163;
 
 /*** Utilities ***/
 
@@ -48,13 +51,16 @@ body {
   font-family: 'Droid Serif', serif;
 }
 
+button {
+  font-family: 'Droid Serif', serif;
+}
+
 /*** Common ***/
 
 .wrapper {
   margin: 0 auto;
   width: 100%;
   position: relative;
-  background: yellow;
 
   @media (min-width: $break-xl) {
     width: $break-xl;
@@ -65,18 +71,21 @@ body {
 
 header {
   height: $header-height;
-  background: lightgray;
+  background: $clr-darkest;
+  color: #fff;
   position: fixed;
   top: 0;
   line-height: $header-height;
   z-index: 150;
   border-bottom: 3px solid $color-main;
   width: 100%;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.5);
 
   section {
     position: absolute;
     top: 0;
-    background: lightcoral;
   }
 
   h1 {
@@ -106,6 +115,7 @@ header {
 .title {
   font-size: $mobile-font-large;
   font-weight: 700;
+  color: $clr-highlight;
 
   @media (min-width: $break-xl) {
     font-size: $desktop-font-large;
@@ -134,6 +144,10 @@ header {
 
 .info:hover {
   cursor: pointer;
+}
+
+.arrow {
+  color: $clr-highlight;
 }
 
 /*** Details Pane ***/
@@ -200,11 +214,16 @@ body.showDetails {
 
   button {
     width: 100%;
-    border: 1px solid $color-main;
-    background: orange;
+    color: #fff;
+    background: $clr-darkest;
     padding: $choice-button-pad;
     margin-top: $choice-button-margin;
     font-size: $mobile-font-main;
+    font-weight: 700;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    border: none;
 
     @media (min-width: $break-xl) {
       font-size: $desktop-font-main;
@@ -253,6 +272,10 @@ body.showDetails {
   background: center;
   background-size: cover;
   height: $imgWrapHeight;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+
 
   @media (min-width: $break-xl) {
     display: block;
@@ -318,8 +341,8 @@ body.showDetails {
 /*** Footer ***/
 
 .gameStatus {
-  border-top: 3px solid $color-main;
-  background: lightgray;
+  background: $clr-dark;
+  color: #fff;
   position: fixed;
   bottom: 0;
   width: 100%;

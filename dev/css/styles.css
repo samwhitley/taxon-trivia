@@ -21,12 +21,14 @@ body {
   color: #28333c;
   font-family: 'Droid Serif', serif; }
 
+button {
+  font-family: 'Droid Serif', serif; }
+
 /*** Common ***/
 .wrapper {
   margin: 0 auto;
   width: 100%;
-  position: relative;
-  background: yellow; }
+  position: relative; }
   @media (min-width: 1200px) {
     .wrapper {
       width: 1200px; } }
@@ -34,17 +36,20 @@ body {
 /*** Header ***/
 header {
   height: 100px;
-  background: lightgray;
+  background: #28333c;
+  color: #fff;
   position: fixed;
   top: 0;
   line-height: 100px;
   z-index: 150;
   border-bottom: 3px solid #28333c;
-  width: 100%; }
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5); }
   header section {
     position: absolute;
-    top: 0;
-    background: lightcoral; }
+    top: 0; }
   header h1 {
     float: left;
     margin-right: 10px; }
@@ -65,7 +70,8 @@ header {
 
 .title {
   font-size: 24px;
-  font-weight: 700; }
+  font-weight: 700;
+  color: #d1e163; }
   @media (min-width: 1200px) {
     .title {
       font-size: 36px; } }
@@ -88,6 +94,9 @@ header {
 
 .info:hover {
   cursor: pointer; }
+
+.arrow {
+  color: #d1e163; }
 
 /*** Details Pane ***/
 .details {
@@ -135,11 +144,16 @@ body.showDetails {
   margin-bottom: 40px; }
   .choice button {
     width: 100%;
-    border: 1px solid #28333c;
-    background: orange;
+    color: #fff;
+    background: #28333c;
     padding: 20px;
     margin-top: 10px;
-    font-size: 16px; }
+    font-size: 16px;
+    font-weight: 700;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    border: none; }
     @media (min-width: 1200px) {
       .choice button {
         font-size: 20px; } }
@@ -169,7 +183,10 @@ body.showDetails {
   display: none;
   background: center;
   background-size: cover;
-  height: 350px; }
+  height: 350px;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
   @media (min-width: 1200px) {
     .imgWrap {
       display: block; } }
@@ -221,8 +238,8 @@ body.showDetails {
 
 /*** Footer ***/
 .gameStatus {
-  border-top: 3px solid #28333c;
-  background: lightgray;
+  background: #394651;
+  color: #fff;
   position: fixed;
   bottom: 0;
   width: 100%;
