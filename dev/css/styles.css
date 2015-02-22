@@ -15,7 +15,6 @@ html {
 /*** Global ***/
 body {
   background: url(/images/paper-bg.jpg) repeat;
-  color: #28333c;
   font-family: 'Droid Serif', serif; }
 
 button {
@@ -39,7 +38,6 @@ header {
   position: fixed;
   top: 0;
   z-index: 150;
-  border-bottom: 3px solid #28333c;
   width: 100%;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
@@ -108,44 +106,41 @@ header {
   right: -100%;
   z-index: 50;
   transition: 0.5s all; }
+  .details section {
+    height: 100%;
+    overflow-y: auto;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: url(/images/paper-bg.jpg) repeat;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
+    @media (min-width: 1024px) {
+      .details section {
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto; } }
+    .details section h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px; }
+    .details section h4 {
+      font-weight: 700;
+      font-size: 16px;
+      margin: 15px 0; }
+    .details section p {
+      margin: 10px 0;
+      font-size: 16px;
+      line-height: 25px; }
 
 .detailContent {
-  height: 100%;
-  overflow-y: auto;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  background: url(/images/paper-bg.jpg) repeat;
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
-  box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
+  margin-top: 0;
+  margin-bottom: 140px; }
   @media (min-width: 1024px) {
     .detailContent {
-      width: 1024px;
-      margin-left: auto;
-      margin-right: auto; } }
-  .detailContent h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 20px; }
-  .detailContent h4 {
-    font-weight: 700;
-    font-size: 16px;
-    margin: 15px 0; }
-  .detailContent p {
-    margin: 10px 0;
-    font-size: 16px;
-    line-height: 25px; }
-  .detailContent .first {
-    margin-top: 0; }
-    @media (min-width: 1024px) {
-      .detailContent .first {
-        margin-top: 100px; } }
-  .detailContent .last {
-    margin-bottom: 140px; }
-    @media (min-width: 1024px) {
-      .detailContent .last {
-        margin-bottom: 120px; } }
+      margin-top: 100px;
+      margin-bottom: 120px; } }
 
 body.showDetails {
   overflow: hidden; }
@@ -235,6 +230,14 @@ body.showDetails {
       margin: 0;
       margin-left: -512px;
       margin-top: -185px; } }
+
+.ajaxOverlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  background: #000 url("/images/loader.gif") no-repeat center;
+  z-index: 300; }
 
 /*** Background Image ***/
 .botanical div {

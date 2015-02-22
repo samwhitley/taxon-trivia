@@ -27,7 +27,7 @@ module.exports = function (grunt) {
       dev: {
         files: [
           {
-            src: 'dev/js/main.js',
+            src: ['dev/js/taxa.js', 'dev/js/screen.js', 'dev/js/controller.js'],
             dest: 'build/js/min.js'
           }
         ]
