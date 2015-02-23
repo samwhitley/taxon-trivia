@@ -37,7 +37,7 @@ header {
   color: #fff;
   position: fixed;
   top: 0;
-  z-index: 150;
+  z-index: 200;
   width: 100%;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.5);
@@ -69,8 +69,12 @@ header {
 
 .title {
   font-size: 24px;
-  font-weight: 700;
-  color: #d1e163; }
+  font-weight: 700; }
+  .title a {
+    color: #d1e163;
+    text-decoration: none; }
+  .title a:hover {
+    color: #b2c1cf; }
   @media (min-width: 1024px) {
     .title {
       font-size: 36px; } }
@@ -93,6 +97,8 @@ header {
 
 .info:hover {
   cursor: pointer; }
+  .info:hover .pageName {
+    color: #b2c1cf; }
 
 .arrow {
   color: #d1e163; }
@@ -104,7 +110,7 @@ header {
   width: 100%;
   height: 100%;
   right: -100%;
-  z-index: 50;
+  z-index: 100;
   transition: 0.5s all; }
   .details section {
     height: 100%;
@@ -121,22 +127,27 @@ header {
         width: 1024px;
         margin-left: auto;
         margin-right: auto; } }
-    .details section h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 20px; }
-    .details section h4 {
-      font-weight: 700;
-      font-size: 16px;
-      margin: 15px 0; }
-    .details section p {
-      margin: 10px 0;
-      font-size: 16px;
-      line-height: 25px; }
 
 .detailContent {
   margin-top: 0;
   margin-bottom: 140px; }
+  .detailContent h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  .detailContent h4 {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 15px 0; }
+  .detailContent p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 25px; }
+  .detailContent a {
+    color: #394651;
+    font-weight: 700; }
+  .detailContent a:hover {
+    color: #b2c1cf; }
   @media (min-width: 1024px) {
     .detailContent {
       margin-top: 100px;
@@ -159,6 +170,7 @@ body.showDetails {
     margin-top: 10px;
     font-size: 16px;
     font-weight: 700;
+    outline: none;
     -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
@@ -175,6 +187,9 @@ body.showDetails {
     -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
+    @media (min-width: 1024px) {
+      .choice img {
+        display: none; } }
   .choice:first-child {
     padding-top: 40px; }
   @media (min-width: 1024px) {
@@ -182,8 +197,6 @@ body.showDetails {
       float: left;
       width: 33.33333%;
       padding-right: 20px; }
-      .choice img {
-        display: none; }
       .choice:first-child {
         padding-top: 0; }
       .choice:nth-child(2n) {
@@ -194,16 +207,16 @@ body.showDetails {
         padding-right: 0; } }
 
 .imgWrap {
-  display: none;
+  position: relative;
   background: center;
   background-size: cover;
-  height: 300px;
   -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
   -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5);
   box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.5); }
   @media (min-width: 1024px) {
     .imgWrap {
-      display: block; } }
+      display: block;
+      height: 300px; } }
 
 #choice1 .imgWrap {
   background-image: url("/images/placeholder-1.jpg"); }
@@ -236,8 +249,9 @@ body.showDetails {
   height: 100%;
   opacity: 0;
   display: none;
+  position: absolute;
   background: #000 url("/images/loader.gif") no-repeat center;
-  z-index: 300; }
+  z-index: 50; }
 
 /*** Background Image ***/
 .botanical div {
@@ -269,7 +283,13 @@ body.showDetails {
   line-height: 60px;
   font-style: italic;
   font-size: 16px;
-  z-index: 100; }
+  z-index: 150; }
+  .gameStatus.activeButton {
+    background: #d1e163;
+    color: #28333c; }
+  .gameStatus.activeButton:hover {
+    cursor: pointer;
+    background: #b2c1cf; }
   .gameStatus .wrapper {
     padding: 0 20px; }
   @media (min-width: 1024px) {

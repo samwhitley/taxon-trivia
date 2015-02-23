@@ -14,9 +14,8 @@ APP.view = (function($, taxa, win) {
       $pageName = $(".pageName");
 
   method.prepareInfo = function(ajaxCall) {
-    // TODO - add some kind of styling to the play button here
     $choiceButtons.each(function() {
-      $(this).slideToggle("slow");
+      $(this).slideToggle(600);
     });
 
     $ajaxOverlays.each(function() {
@@ -25,15 +24,18 @@ APP.view = (function($, taxa, win) {
           opacity: 1
         },
         {
-          duration: 1000,
-          display: "block",
+          duration: 600,
+          display: "block"
         }
       );
     });
 
-    if (typeof ajaxCall === "function") {
-      ajaxCall();
-    }
+    $gameStatus.slideToggle(600, function() {
+      $gameStatus.removeClass("activeButton");
+      if (typeof ajaxCall === "function") {
+        ajaxCall();
+      }
+    });
   };
 
   method.prepareChoices = function(taxonName, taxonDesc, ajaxCall) {
@@ -49,17 +51,7 @@ APP.view = (function($, taxa, win) {
 
   method.connectReplayEvent = function(ajaxCall) {
     $gameStatus.one("click", function() {
-      $choiceButtons.each(function() {
-        $(this).slideToggle("slow");
-      });
-
-      $ajaxOverlays.each(function() {
-        $(this).velocity("stop").velocity({opacity: 1}, {duration: 1000, display: "block"});
-      });
-
-      if (typeof ajaxCall === "function") {
-        ajaxCall();
-      }
+      method.prepareInfo();
     });
   };
 
@@ -86,10 +78,8 @@ APP.view = (function($, taxa, win) {
   };
 
   method.printChallengeText = function(answer) {
-
-    // TODO - style the footer here
-
     $statusText.html("").append("Pick a member of <strong class='answer'>" + answer + ".</strong>");
+    $gameStatus.slideToggle("slow");
   };
 
   method.printChoiceButtonArea = function() {
@@ -111,19 +101,20 @@ APP.view = (function($, taxa, win) {
   };
 
   method.printPlayAgainMessage = function(message) {
-    $statusText.html(message).addClass("activeButton");
+    $gameStatus.addClass("activeButton");
+    $statusText.html(message);
   };
 
   method.activatePlayButton = function(name, startGameFunc) {
-    if (!$statusText.hasClass("activeButton")) {
-      $statusText.one("click", function() {
+    if (!$gameStatus.hasClass("activeButton")) {
+      $gameStatus.one("click", function() {
         method.prepareInfo(startGameFunc);
       });
-      $statusText.addClass("activeButton");
+      $gameStatus.addClass("activeButton");
     }
 
     $statusText.html("<p>You\'ve chosen <strong>" + name + ".</strong> Click here to start!</p>");
-  }
+  };
 
   method.connectTaxonChoiceEvents = function(setTaxonFunc, getNameFunc, startGameFunc) {
     for (var i = 0, len = $choiceButtons.length; i < len; i++) {
