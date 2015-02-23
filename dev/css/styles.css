@@ -130,7 +130,8 @@ header {
 
 .detailContent {
   margin-top: 0;
-  margin-bottom: 140px; }
+  margin-bottom: 140px;
+  line-height: 25px; }
   .detailContent h3 {
     font-size: 20px;
     font-weight: 700;
@@ -141,8 +142,7 @@ header {
     margin: 15px 0; }
   .detailContent p {
     margin: 10px 0;
-    font-size: 16px;
-    line-height: 25px; }
+    font-size: 16px; }
   .detailContent a {
     color: #394651;
     font-weight: 700; }
@@ -219,13 +219,13 @@ body.showDetails {
       height: 300px; } }
 
 #choice1 .imgWrap {
-  background-image: url("/images/placeholder-1.jpg"); }
+  background-image: url("/images/mammalia.jpg"); }
 
 #choice2 .imgWrap {
-  background-image: url("/images/placeholder-2.jpg"); }
+  background-image: url("/images/aves.jpg"); }
 
 #choice3 .imgWrap {
-  background-image: url("/images/placeholder-3.jpg"); }
+  background-image: url("/images/squamata.jpg"); }
 
 .choiceArea {
   margin-top: 60px;

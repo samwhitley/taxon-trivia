@@ -170,6 +170,8 @@ header {
 .detailContent {
   margin-top: 0;
   margin-bottom: (2 * $footer-mobile-height) + $global-pad;
+  line-height: 25px;
+
   h3 {
     font-size: 20px;
     font-weight: 700;
@@ -183,7 +185,6 @@ header {
   p {
     margin: 10px 0;
     font-size: 16px;
-    line-height: 25px;
   }
   a {
     color: $clr-dark;
@@ -271,13 +272,13 @@ body.showDetails {
   }
 }
 #choice1 .imgWrap {
-  background-image: url('/images/placeholder-1.jpg');
+  background-image: url('/images/mammalia.jpg');
 }
 #choice2 .imgWrap {
-  background-image: url('/images/placeholder-2.jpg');
+  background-image: url('/images/aves.jpg');
 }
 #choice3 .imgWrap {
-  background-image: url('/images/placeholder-3.jpg');
+  background-image: url('/images/squamata.jpg');
 }
 .choiceArea {
   margin-top: $header-mobile-height;
