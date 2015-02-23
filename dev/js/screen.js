@@ -39,8 +39,6 @@ APP.view = (function($, taxa, win) {
   };
 
   method.prepareChoices = function(taxonName, taxonDesc, ajaxCall) {
-    console.log("prepareChoices()");
-
     $pageName.text(taxonName);
     $detailContent.html("").append(taxonDesc);
 
@@ -51,7 +49,7 @@ APP.view = (function($, taxa, win) {
 
   method.connectReplayEvent = function(ajaxCall) {
     $gameStatus.one("click", function() {
-      method.prepareInfo();
+      method.prepareInfo(ajaxCall);
     });
   };
 
