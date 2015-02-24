@@ -40,7 +40,7 @@ APP.view = (function($, taxa, win) {
 
   method.prepareChoices = function(taxonName, taxonDesc, ajaxCall) {
     $pageName.text(taxonName);
-    $detailContent.html("").append(taxonDesc);
+    $detailContent.html("").append("<h3>" + taxonName + "</h3>").append(taxonDesc);
 
     if (typeof ajaxCall === "function") {
       ajaxCall();
@@ -89,7 +89,7 @@ APP.view = (function($, taxa, win) {
   method.printActiveButton = function(index) {
     var $current = $($choiceButtons[index]);
 
-    $current.text("Choice" + (index + 1)).addClass("activeButton");
+    $current.text("Choice " + (index + 1)).addClass("activeButton");
   };
 
   method.printAnswer = function(index, name) {

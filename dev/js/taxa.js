@@ -31,21 +31,6 @@ APP.taxa = (function(win, $) {
       ]
     },
     {
-      "name" : "Squamata",
-      "primary" : 1704, //Squamata
-      "secondary" : [
-        1733, //Amphisbaenia
-        2819161, //Gekkota
-        2819271, //Iguania
-        1708, //Lacertidae
-        40084768, //Neoanguimorpha
-        4518884, //Varanoidea
-        8109, //Scincidae
-        2816351, //Alethinophidia
-        2815989 //Scolecophidia
-      ]
-    },
-    {
       "name" : "Aves",
       "primary" : 695, //Aves
       "secondary" : [
@@ -62,6 +47,21 @@ APP.taxa = (function(win, $) {
         1590, //Psittaciformes
         696, //Strigiformes
         1596 //Passeriformes
+      ]
+    },
+    {
+      "name" : "Squamata",
+      "primary" : 1704, //Squamata
+      "secondary" : [
+        1733, //Amphisbaenia
+        2819161, //Gekkota
+        2819271, //Iguania
+        1708, //Lacertidae
+        40084768, //Neoanguimorpha
+        4518884, //Varanoidea
+        8109, //Scincidae
+        2816351, //Alethinophidia
+        2815989 //Scolecophidia
       ]
     }
   ];

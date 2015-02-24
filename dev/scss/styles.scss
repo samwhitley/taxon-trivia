@@ -40,6 +40,13 @@ body {
 }
 button {
   font-family: 'Droid Serif', serif;
+  -webkit-transition: background-color 0.6s;
+  transition: background-color 0.6s;
+}
+
+a {
+  -webkit-transition: color 0.6s;
+  transition: color 0.6s;
 }
 /*** Common ***/
 
@@ -51,6 +58,7 @@ button {
     width: $break-xl;
   }
 }
+
 /*** Header ***/
 
 header {
@@ -120,6 +128,12 @@ header {
 .info {
   font-size: $mobile-font-main;
   font-weight: 700;
+
+  .pageName {
+    -webkit-transition: color 0.6s;
+    transition: color 0.6s;
+  }
+
   @media (min-width: $break-xl) {
     font-size: $desktop-font-main;
   }
@@ -130,10 +144,6 @@ header {
   .pageName {
     color: $clr-highlight2;
   }
-
-  // .arrow {
-  //   color: $clr-highlight2;
-  // }
 }
 
 .arrow {
@@ -142,14 +152,24 @@ header {
 
 /*** Details Pane ***/
 
+.detailOverlay {
+  background: $clr-darkest;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  z-index: 75;
+}
+
 .details {
-  background: rgba(40, 51, 60, 0.5);
   position: fixed;
   width: 100%;
   height: 100%;
   right: -100%;
   z-index: 100;
-  transition: 0.5s all;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
   section {
     height: 100%;
     overflow-y: auto;
@@ -197,9 +217,6 @@ header {
     margin-top: $header-desktop-height;
     margin-bottom: $footer-desktop-height + $global-pad;
   }
-}
-body.showDetails {
-  overflow: hidden;
 }
 .details.showDetails {
   right: 0;
@@ -345,6 +362,8 @@ body.showDetails {
   &.activeButton {
     background: $clr-highlight1;
     color: $clr-darkest;
+    -webkit-transition: background-color 1.25s;
+    transition: background-color 1.25s;
   }
 
   &.activeButton:hover {

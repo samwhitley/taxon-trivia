@@ -5,6 +5,7 @@ APP.controller = (function(win, $, taxa, view) {
       $body = $("body"),
       $info = $(".info"),
       $details = $(".details"),
+      $detailOverlay = $(".detailOverlay"),
       detailsVisible = false;
 
   function connectEvents() {
@@ -16,10 +17,32 @@ APP.controller = (function(win, $, taxa, view) {
     $info.click(function() {
       if (!detailsVisible) {
         $details.addClass("showDetails");
+        $detailOverlay.addClass("showDetails");
         detailsVisible = true;
+
+        $detailOverlay.velocity("stop").velocity(
+          {
+            opacity: 0.6
+          },
+          {
+            duration: 600,
+            display: "block"
+          }
+        );
       }
       else {
+        $detailOverlay.velocity("stop").velocity(
+          {
+            opacity: 0
+          },
+          {
+            duration: 600,
+            display: "none"
+          }
+        );
+
         $details.removeClass("showDetails");
+        $detailOverlay.removeClass("showDetails");
         detailsVisible = false;
       }
     });
