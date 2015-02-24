@@ -49,12 +49,12 @@ APP.controller = (function(win, $, taxa, view) {
   }
 
   function correctGuess() {
-    var message = "Good job! The animal you chose belongs to <strong>" + taxa.getAnswerName() + ".</strong> Click here to play again.";
+    var message = "That's right! Press here to play again.";
     setPlayAgainState(message);
   }
 
   function wrongGuess() {
-    var message = "Sorry, the animal you chose is not a member of <strong>" + taxa.getAnswerName() + ".</strong> Click here to play again.";
+    var message = "Sorry, wrong answer. Press here to play again.";
     setPlayAgainState(message);
   }
 

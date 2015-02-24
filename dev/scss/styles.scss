@@ -89,6 +89,16 @@ header {
 .headerLeft {
   left: 0;
   padding-left: $global-pad;
+  a {
+    color: $clr-highlight1;
+    text-decoration: none;
+    font-weight: 700;
+
+  }
+  a:hover {
+    color: $clr-highlight2;
+  }
+
   @media (min-width: $break-xl) {
     padding-left: 0;
   }
@@ -103,14 +113,6 @@ header {
 .title {
   font-size: $mobile-font-large;
   font-weight: 700;
-
-  a {
-    color: $clr-highlight1;
-    text-decoration: none;
-  }
-  a:hover {
-    color: $clr-highlight2;
-  }
 
   @media (min-width: $break-xl) {
     font-size: $desktop-font-large;

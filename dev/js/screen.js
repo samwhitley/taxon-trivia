@@ -111,7 +111,7 @@ APP.view = (function($, taxa, win) {
       $gameStatus.addClass("activeButton");
     }
 
-    $statusText.html("<p>You\'ve chosen <strong>" + name + ".</strong> Click here to start!</p>");
+    $statusText.html("<p><strong>" + name + ".</strong> Press here to start!</p>");
   };
 
   method.connectTaxonChoiceEvents = function(setTaxonFunc, getNameFunc, startGameFunc) {
